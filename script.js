@@ -61,6 +61,12 @@ function clearBoard(){
 // listen for clicks to toggle changeSquareColor
 document.querySelector(".board").addEventListener("click", () => {
     click = !click;
+    if (click) {
+        document.querySelector(".mode").textContent = "Mode: Coloring";
+    } else {
+        document.querySelector(".mode").textContent = "Mode: Not Coloring";
+        
+    }
 });
 
 populateBoard(16);
