@@ -1,4 +1,5 @@
 let color = "black";
+let click = false;
 
 function populateBoard(size){
     // select board
@@ -35,10 +36,12 @@ function changeSize(size){
 }
 
 function changeSquareColor(){
-    if (color === "random") {
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    } else {
-        this.style.backgroundColor = color;
+    if (click) {
+        if (color === "random") {
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        } else {
+            this.style.backgroundColor = color;
+        }      
     }
 }
 
@@ -54,6 +57,15 @@ function clearBoard(){
     let squares = board.querySelectorAll('div');
     squares.forEach((div) => div.style.backgroundColor = "white");
 }
+
+// listen for clicks to toggle changeSquareColor
+document.querySelector(".board").addEventListener("click", () => {
+    if (click) {
+        click = false;
+    } else {
+        click = true;
+    }
+});
 
 populateBoard(16);
 //changeSize(16);
