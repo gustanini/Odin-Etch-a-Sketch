@@ -13,4 +13,9 @@ function populateBoard(size){
     }
 }
 
-populateBoard(4);
+function changeSize(size){
+    populateBoard(size);
+}
+
+//populateBoard(4);
+//changeSize(16);
