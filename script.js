@@ -20,7 +20,13 @@ function populateBoard(size){
 }
 
 function changeSize(size){
-    populateBoard(size);
+    // keep size between 2 and 100
+    if (size >= 2 && size <= 100){
+        populateBoard(size);
+    } 
+    else {
+        console.log("Invalid size, please input a value between 2 and 100.");
+    }
 }
 
 //populateBoard(4);
