@@ -1,2 +1,7 @@
 @import url("reset.css");
 
+.board{
+    height: 500px;
+    width: 500px;
+    display: grid;
+}
