@@ -28,9 +28,11 @@ function populateBoard(size){
 function changeSize(size){
     // keep size between 2 and 100
     if (size >= 2 && size <= 100){
+        document.querySelector(".error").style.display = "none";
         populateBoard(size);
     } 
     else {
+        document.querySelector(".error").style.display = "flex";
         console.log("Invalid size, please input a value between 2 and 100.");
     }
 }
