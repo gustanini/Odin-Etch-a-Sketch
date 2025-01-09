@@ -1,12 +1,16 @@
-// select board
-let board = document.querySelector(".board");
-// 16x16 grid
-board.style.gridTemplateColumns = "repeat(16, 1fr)";
-board.style.gridTemplateRows = "repeat(16, 1fr)";
-
-// add 16x16 divs, color blue
-for (i = 0; i<256; i++){
-    let square = document.createElement("div");
-    square.style.backgroundColor = "blue";
-    board.insertAdjacentElement("beforeend", square);
+function populateBoard(size){
+    // select board
+    let board = document.querySelector(".board");
+    // size^2 grid
+    board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    
+    // add size^2 divs, color blue
+    for (i = 0; i < (size * size); i++){
+        let square = document.createElement("div");
+        square.style.backgroundColor = "blue";
+        board.insertAdjacentElement("beforeend", square);
+    }
 }
+
+populateBoard(4);
