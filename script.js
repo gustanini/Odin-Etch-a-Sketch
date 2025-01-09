@@ -14,7 +14,10 @@ function populateBoard(size){
     // add size^2 divs, color blue
     for (i = 0; i < amountOfSquares; i++){
         let square = document.createElement("div");
-        square.style.backgroundColor = "blue";
+        // change color on hover
+        square.addEventListener("mouseover", changeSquareColor);
+        // default color white
+        square.style.backgroundColor = "white";
         board.insertAdjacentElement("beforeend", square);
     }
 }
@@ -29,5 +32,8 @@ function changeSize(size){
     }
 }
 
+function changeSquareColor(){
+    this.style.backgroundColor = "black";
+}
 //populateBoard(4);
 //changeSize(16);
