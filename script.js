@@ -46,5 +46,14 @@ function changeColor(choice){
     color = choice;
 }
 
+function clearBoard(){
+    // select board
+    let board = document.querySelector(".board");
+
+    // clear board before populating
+    let squares = board.querySelectorAll('div');
+    squares.forEach((div) => div.style.backgroundColor = "white");
+}
+
 populateBoard(16);
 //changeSize(16);
